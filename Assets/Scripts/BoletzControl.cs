@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoletzControl : MonoBehaviour {
+public class BoletzControl : MonoBehaviour
+{
+    [Tooltip("1 or 2")]
+    [SerializeField] private int PlayerJoystickNumber;
 
     [SerializeField]
     GameObject Player;
@@ -18,21 +21,20 @@ public class BoletzControl : MonoBehaviour {
 
     private Vector3 CameraPositionOffset;
 
-    void Start () {
+    void Start() {
         CameraPositionOffset = Camera.CameraOffset;
         Camera.transform.position = Player.transform.position + Camera.transform.localRotation * CameraPositionOffset;
     }
-	
-	void Update () {
-        float playerHorizontalMovement = Input.GetAxis("Horizontal");
-        float playerVerticalMovement = Input.GetAxis("Vertical");
 
-        // Applied so we don't normalize zero vector
+    void Update() {
+        float playerHorizontalMovement = Input.GetAxis("Horizontal_" + PlayerJoystickNumber);
+        float playerVerticalMovement = Input.GetAxis("Vertical_" + PlayerJoystickNumber);
+
         if (Mathf.Approximately(playerHorizontalMovement, 0.0f) && Mathf.Approximately(playerVerticalMovement, 0.0f)) { return; }
 
         Vector3 playerTranslation = Speed * Time.deltaTime * Vector3.Normalize(new Vector3(playerHorizontalMovement, 0, playerVerticalMovement));
         Player.transform.position = Player.transform.position + Player.transform.localRotation * playerTranslation;
-	}
+    }
 
     void LateUpdate() {
         float cameraHorizontalAngle = Input.GetAxis("Mouse X") * Time.deltaTime * MouseSpeed.x;
@@ -42,8 +44,7 @@ public class BoletzControl : MonoBehaviour {
         float xAngle = cameraRotation.x + verticalAngle;
         if (xAngle < 0) {
             xAngle += 360;
-        }
-        else if (xAngle > 360) {
+        } else if (xAngle > 360) {
             xAngle -= 360;
         }
 
