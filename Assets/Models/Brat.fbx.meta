@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: a0eeba9f2df2c3242865db9b419ca401
-timeCreated: 1517061747
+guid: d11605ae86d474a4b9c84f2e65817f0b
+timeCreated: 1517062624
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -54,31 +54,30 @@ ModelImporter:
     100092: pinky_03_l_end
     100094: pinky_03_r
     100096: pinky_03_r_end
-    100098: Point
-    100100: ring_01_l
-    100102: ring_01_r
-    100104: ring_02_l
-    100106: ring_02_r
-    100108: ring_03_l
-    100110: ring_03_l_end
-    100112: ring_03_r
-    100114: ring_03_r_end
-    100116: Root
-    100118: spine_01
-    100120: spine_02
-    100122: spine_03
-    100124: thigh_l
-    100126: thigh_r
-    100128: thumb_01_l
-    100130: thumb_01_r
-    100132: thumb_02_l
-    100134: thumb_02_r
-    100136: thumb_03_l
-    100138: thumb_03_l_end
-    100140: thumb_03_r
-    100142: thumb_03_r_end
-    100144: upperarm_l
-    100146: upperarm_r
+    100098: ring_01_l
+    100100: ring_01_r
+    100102: ring_02_l
+    100104: ring_02_r
+    100106: ring_03_l
+    100108: ring_03_l_end
+    100110: ring_03_r
+    100112: ring_03_r_end
+    100114: Root
+    100116: spine_01
+    100118: spine_02
+    100120: spine_03
+    100122: thigh_l
+    100124: thigh_r
+    100126: thumb_01_l
+    100128: thumb_01_r
+    100130: thumb_02_l
+    100132: thumb_02_r
+    100134: thumb_03_l
+    100136: thumb_03_l_end
+    100138: thumb_03_r
+    100140: thumb_03_r_end
+    100142: upperarm_l
+    100144: upperarm_r
     400000: ball_l
     400002: ball_l_end
     400004: ball_r
@@ -128,38 +127,36 @@ ModelImporter:
     400092: pinky_03_l_end
     400094: pinky_03_r
     400096: pinky_03_r_end
-    400098: Point
-    400100: ring_01_l
-    400102: ring_01_r
-    400104: ring_02_l
-    400106: ring_02_r
-    400108: ring_03_l
-    400110: ring_03_l_end
-    400112: ring_03_r
-    400114: ring_03_r_end
-    400116: Root
-    400118: spine_01
-    400120: spine_02
-    400122: spine_03
-    400124: thigh_l
-    400126: thigh_r
-    400128: thumb_01_l
-    400130: thumb_01_r
-    400132: thumb_02_l
-    400134: thumb_02_r
-    400136: thumb_03_l
-    400138: thumb_03_l_end
-    400140: thumb_03_r
-    400142: thumb_03_r_end
-    400144: upperarm_l
-    400146: upperarm_r
+    400098: ring_01_l
+    400100: ring_01_r
+    400102: ring_02_l
+    400104: ring_02_r
+    400106: ring_03_l
+    400108: ring_03_l_end
+    400110: ring_03_r
+    400112: ring_03_r_end
+    400114: Root
+    400116: spine_01
+    400118: spine_02
+    400120: spine_03
+    400122: thigh_l
+    400124: thigh_r
+    400126: thumb_01_l
+    400128: thumb_01_r
+    400130: thumb_02_l
+    400132: thumb_02_r
+    400134: thumb_03_l
+    400136: thumb_03_l_end
+    400138: thumb_03_r
+    400140: thumb_03_r_end
+    400142: upperarm_l
+    400144: upperarm_r
     4300000: Bratboletz:Male_casualsuit03
     4300002: Bratboletz:Eyebrow005
     4300004: Bratboletz:High-poly
     4300006: Bratboletz:Ponytail01
     4300008: Bratboletz:Male_generic
     9500000: //RootNode
-    10800000: Point
     13700000: Bratboletz:Eyebrow005
     13700002: Bratboletz:High-poly
     13700004: Bratboletz:Male_casualsuit03
@@ -170,31 +167,31 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bratboletz_Eyebrow005_Eyebrow005
-    second: {fileID: 2100000, guid: fead4a33440755648b95a2efd642da0d, type: 2}
+    second: {fileID: 2100000, guid: a082ece5b152c3747801f178e57ae95a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bratboletz_High-poly_Eye_brown
-    second: {fileID: 2100000, guid: 065aac15d11f2a74ab5c43fb8ae644e3, type: 2}
+    second: {fileID: 2100000, guid: 89eadbf4f4082334a97135c2697305dc, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bratboletz_Male_casualsuit03_Male_casualsuit03
-    second: {fileID: 2100000, guid: 572ddf313711e984eb36ee80651d3271, type: 2}
+    second: {fileID: 2100000, guid: 5de87561b88687344922bca6958c109b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bratboletz_Male_generic_Defaultskin
-    second: {fileID: 2100000, guid: 6bdf929c334586249a664d79d3670d71, type: 2}
+    second: {fileID: 2100000, guid: 798f3ce6c4f6f8243be5ae76ee1eb6f2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Bratboletz_Ponytail01_Ponytail01
-    second: {fileID: 2100000, guid: 44884a1a1d3274d43b7faf22b3555f41, type: 2}
+    second: {fileID: 2100000, guid: 318fdecbd2b93de45b11557d1af9e266, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
     materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
