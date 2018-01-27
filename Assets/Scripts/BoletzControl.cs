@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class BoletzControl : MonoBehaviour
 {
-    [Tooltip("1 or 2")]
-    [SerializeField] private int PlayerJoystickNumber;
-
     [SerializeField]
     GameObject Player;
 
@@ -19,7 +16,17 @@ public class BoletzControl : MonoBehaviour
     [SerializeField]
     float Speed;
 
+    [SerializeField]
+    float JumpForce;
+
     private Vector3 CameraPositionOffset;
+    private PlayerNumber Number;
+    private Rigidbody Rigid;
+
+    private void Awake() {
+        Number = GetComponent<PlayerNumber>();
+        Rigid = GetComponent<Rigidbody>();
+    }
 
     void Start() {
         CameraPositionOffset = Camera.CameraOffset;
@@ -27,8 +34,11 @@ public class BoletzControl : MonoBehaviour
     }
 
     void Update() {
-        float playerHorizontalMovement = Input.GetAxis("Horizontal_" + PlayerJoystickNumber);
-        float playerVerticalMovement = Input.GetAxis("Vertical_" + PlayerJoystickNumber);
+        if (Input.GetButtonDown("Jump_" + Number.Number))
+            Rigid.AddForce(transform.up * JumpForce);
+
+        float playerHorizontalMovement = Input.GetAxis("Horizontal_" + Number.Number);
+        float playerVerticalMovement = Input.GetAxis("Vertical_" + Number.Number);
 
         if (Mathf.Approximately(playerHorizontalMovement, 0.0f) && Mathf.Approximately(playerVerticalMovement, 0.0f)) { return; }
 
@@ -37,8 +47,8 @@ public class BoletzControl : MonoBehaviour
     }
 
     void LateUpdate() {
-        float cameraHorizontalAngle = Input.GetAxis("CameraX_" + PlayerJoystickNumber) * Time.deltaTime * MouseSpeed.x;
-        float verticalAngle = -Input.GetAxis("CameraY_" + PlayerJoystickNumber) * Time.deltaTime * MouseSpeed.y;
+        float cameraHorizontalAngle = Input.GetAxis("CameraX_" + Number.Number) * Time.deltaTime * MouseSpeed.x;
+        float verticalAngle = -Input.GetAxis("CameraY_" + Number.Number) * Time.deltaTime * MouseSpeed.y;
 
         Vector3 cameraRotation = Camera.transform.localRotation.eulerAngles;
         float xAngle = cameraRotation.x + verticalAngle;

@@ -2,25 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrumpetControl : MonoBehaviour {
+public class TrumpetControl : MonoBehaviour
+{
 
     [SerializeField]
-    GameObject Projectile;
+    GameObject MoleProjectile;
+
+    [SerializeField]
+    GameObject CoakroachProjectile;
 
     [SerializeField]
     float TrumpetOffset;
 
     [SerializeField]
-    BoletzCamera Camera;
+    BoletzCamera BoletzCamera;
 
     [SerializeField]
-    float Cooldown = 3.0f;
+    Camera Camera;
+
+    [SerializeField]
+    MeshRenderer PlaneMolehole;
+
+    [SerializeField]
+    float CatchRadius = 5.0f;
+
+    [SerializeField]
+    float ShootCooldown = 3.0f;
+
+    [SerializeField]
+    float ShootDelay = 0.5f;
 
     [SerializeField]
     Vector2 ProjectileSpeed = new Vector2(10.0f, 40.0f);
 
     [SerializeField]
     float RaiseVelocityTempoPerSecond = 8.0f;
+
+    [SerializeField]
+    Vector2 CrosshairRelativePosition = new Vector2(0.5f, 0.5f);
 
     /// <summary>
     /// Used to calculate how to rotate direction of shot projectile towards camera's crosshair's direction
@@ -50,85 +69,102 @@ public class TrumpetControl : MonoBehaviour {
 
     private Vector3 InitialPosition;
     private Vector3 InitialVelocity;
+    private PlayerNumber Number;
+
+    private Vector2 CrosshairPosition;
+
+    private EStatics.EProjectile CurrentProjectileType = EStatics.EProjectile.None;
+    private GameObject HoldProjectile;
 
     private void Awake() {
         LineRenderer = GetComponent<LineRenderer>();
+        Number = GetComponent<PlayerNumber>();
     }
 
     private void Start() {
-        TowardsCrosshairRotation = Quaternion.Euler(0.0f, Mathf.Atan(Camera.CameraOffset.x / CommonDistance) * Mathf.Rad2Deg, 0.0f);
+        TowardsCrosshairRotation = Quaternion.Euler(0.0f, Mathf.Atan(BoletzCamera.CameraOffset.x / CommonDistance) * Mathf.Rad2Deg, 0.0f);
         RaiseVelocityUpwardsRotation = Quaternion.Euler(-RaiseVelocityUpwardsAngle, 0.0f, 0.0f);
         bWasFireHandled = true;
+        CatchRadius += Mathf.Abs(BoletzCamera.CameraOffset.z);
     }
 
 
 void Update () {
-        if (bIsCooldownCoroutinePlaying) { return; }
-
-        bShouldShoot = false; 
-
-        if (Input.GetButton("Fire1")) {
-            if (bWasFireHandled) {
-                StartHoldingFireKey = Time.time;
-                bWasFireHandled = false;
-                CurrentProjectileSpeed = ProjectileSpeed.x;
-            }
-            else {
-                CurrentProjectileSpeed = Mathf.Clamp(ProjectileSpeed.x + (Time.time - StartHoldingFireKey) * RaiseVelocityTempoPerSecond, ProjectileSpeed.x, ProjectileSpeed.y);
-            }
-        }
-        else if (!bWasFireHandled) {
-            bShouldShoot = true;
-            CurrentProjectileSpeed = Mathf.Clamp(ProjectileSpeed.x + (Time.time - StartHoldingFireKey) * RaiseVelocityTempoPerSecond, ProjectileSpeed.x, ProjectileSpeed.y);
-            bWasFireHandled = true;
+        if (CurrentProjectileType == EStatics.EProjectile.None) {
+            CatchMode();
         }
         else {
-            CurrentProjectileSpeed = ProjectileSpeed.x;
-        }
-
-        InitialPosition = Camera.transform.position + TowardsCrosshairRotation * Camera.transform.rotation * new Vector3(-Camera.CameraOffset.x, -Camera.CameraOffset.y, -Camera.CameraOffset.z + TrumpetOffset);
-        InitialVelocity = TowardsCrosshairRotation * Camera.transform.rotation * RaiseVelocityUpwardsRotation * new Vector3(0.0f, 0.0f, CurrentProjectileSpeed);
-
-        if (bShouldShoot) {
-            Shoot();
-        }
-        else {
-            PreviewProjectilePath();
+            ShootMode();
         }
 	}
 
-    void PreviewProjectilePath () {
+    void CatchMode() {
+        if (!Input.GetButton("Fire_" + Number.Number)) { return; }
+
+        CrosshairPosition = new Vector2(CrosshairRelativePosition.x * Camera.pixelWidth, CrosshairRelativePosition.y * Camera.pixelHeight);
+        Ray ray = Camera.ScreenPointToRay(CrosshairPosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, CatchRadius, 1 << LayerMask.NameToLayer("Projectile"))) {
+            CurrentProjectileType = EStatics.StringToEProjectile.Get[hit.collider.gameObject.tag];
+
+            Vector3 InitialPosition = BoletzCamera.transform.position + TowardsCrosshairRotation * BoletzCamera.transform.rotation * new Vector3(-BoletzCamera.CameraOffset.x, -BoletzCamera.CameraOffset.y, -BoletzCamera.CameraOffset.z + TrumpetOffset);
+            if (CurrentProjectileType == EStatics.EProjectile.Mole) {
+                HoldProjectile = Instantiate(MoleProjectile, InitialPosition, BoletzCamera.transform.rotation);
+            }
+            else if (CurrentProjectileType == EStatics.EProjectile.Coakroach) {
+                HoldProjectile = Instantiate(CoakroachProjectile, InitialPosition, BoletzCamera.transform.rotation);
+            }
+
+            Destroy(hit.collider.gameObject);
+            StartCoroutine(SetCooldownCoroutine(ShootDelay));
+        }
+    }
+
+    void ShootMode() {
+        InitialPosition = BoletzCamera.transform.position + TowardsCrosshairRotation * BoletzCamera.transform.rotation * new Vector3(-BoletzCamera.CameraOffset.x, -BoletzCamera.CameraOffset.y, -BoletzCamera.CameraOffset.z + TrumpetOffset);
+        InitialVelocity = TowardsCrosshairRotation * BoletzCamera.transform.rotation * RaiseVelocityUpwardsRotation * new Vector3(0.0f, 0.0f, CurrentProjectileSpeed);
+
+        HoldProjectile.transform.position = InitialPosition;
+        HoldProjectile.transform.rotation = BoletzCamera.transform.rotation;
+	}
+
+    void PreviewProjectilePath() {
         LineRenderer.positionCount = NumOfPreviewSteps;
         Vector3 position = InitialPosition;
         Vector3 velocity = InitialVelocity;
         Vector3 lastPosition;
-        bool bShouldEndInNextIteration = false;
+        int ShouldEndInNextNextIteration = 0;
         for (int i = 0; i < NumOfPreviewSteps; ++i) {
             LineRenderer.SetPosition(i, position);
-            if (bShouldEndInNextIteration) {
+            if (ShouldEndInNextNextIteration == 2) {
                 LineRenderer.positionCount = i;
                 return;
+            }
+            else if (ShouldEndInNextNextIteration == 1) {
+                ShouldEndInNextNextIteration++;
             }
             lastPosition = position;
             position += velocity * PreviewDeltaTimeStep + 0.5f * Physics.gravity * PreviewDeltaTimeStep * PreviewDeltaTimeStep;
             velocity += Physics.gravity * PreviewDeltaTimeStep;
             if (Physics.Linecast(lastPosition, position)) {
-                bShouldEndInNextIteration = true;
+                ShouldEndInNextNextIteration++;
             }
         }
     }
 
     void Shoot() {
-        GameObject sentProjectile = Instantiate(Projectile, InitialPosition, Camera.transform.rotation);
+        Destroy(HoldProjectile);
+        GameObject sentProjectile = Instantiate(MoleProjectile, InitialPosition, BoletzCamera.transform.rotation);
         Rigidbody rb = sentProjectile.GetComponent<Rigidbody>();
         rb.velocity = InitialVelocity;
-        StartCoroutine(SetCooldownCoroutine());
+        StartCoroutine(SetCooldownCoroutine(ShootCooldown));
+        CurrentProjectileType = EStatics.EProjectile.None;
     }
 
-    IEnumerator SetCooldownCoroutine() {
+    IEnumerator SetCooldownCoroutine(float Delay) {
         bIsCooldownCoroutinePlaying = true;
         LineRenderer.positionCount = 0;
-        yield return new WaitForSeconds(Cooldown);
+        yield return new WaitForSeconds(Delay);
         bIsCooldownCoroutinePlaying = false;
     }
 }
