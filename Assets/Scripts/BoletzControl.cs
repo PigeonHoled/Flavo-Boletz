@@ -47,7 +47,7 @@ public class BoletzControl : MonoBehaviour {
             xAngle -= 360;
         }
 
-        xAngle = (xAngle <= 179) ? Mathf.Clamp(xAngle, 0, 40) : Mathf.Clamp(xAngle, 320, 360);
+        xAngle = (xAngle <= 179) ? Mathf.Clamp(xAngle, 0, 50) : Mathf.Clamp(xAngle, 310, 360);
         cameraRotation = new Vector3(xAngle, cameraRotation.y + cameraHorizontalAngle, cameraRotation.z);
         Camera.transform.localRotation = Quaternion.Euler(cameraRotation);
 
