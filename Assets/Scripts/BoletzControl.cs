@@ -37,8 +37,8 @@ public class BoletzControl : MonoBehaviour
     }
 
     void LateUpdate() {
-        float cameraHorizontalAngle = Input.GetAxis("Mouse X") * Time.deltaTime * MouseSpeed.x;
-        float verticalAngle = -Input.GetAxis("Mouse Y") * Time.deltaTime * MouseSpeed.y;
+        float cameraHorizontalAngle = Input.GetAxis("CameraX_" + PlayerJoystickNumber) * Time.deltaTime * MouseSpeed.x;
+        float verticalAngle = -Input.GetAxis("CameraY_" + PlayerJoystickNumber) * Time.deltaTime * MouseSpeed.y;
 
         Vector3 cameraRotation = Camera.transform.localRotation.eulerAngles;
         float xAngle = cameraRotation.x + verticalAngle;

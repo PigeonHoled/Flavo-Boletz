@@ -666,7 +666,7 @@ GameObject:
   - component: {fileID: 960007640}
   - component: {fileID: 960007639}
   m_Layer: 0
-  m_Name: Boletz (1)
+  m_Name: Boletz2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -798,6 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e87080279833646bbefcc7236fa039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerJoystickNumber: 2
   Player: {fileID: 1217063448}
   Camera: {fileID: 1677125163}
   MouseSpeed: {x: 10, y: 10}
@@ -1478,7 +1479,7 @@ GameObject:
   - component: {fileID: 1656455220}
   - component: {fileID: 1656455221}
   m_Layer: 0
-  m_Name: Boletz
+  m_Name: Boletz1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1510,6 +1511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e87080279833646bbefcc7236fa039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerJoystickNumber: 1
   Player: {fileID: 2106579809}
   Camera: {fileID: 547911707}
   MouseSpeed: {x: 10, y: 10}
