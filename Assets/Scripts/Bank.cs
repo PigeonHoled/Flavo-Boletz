@@ -23,7 +23,6 @@ public class Bank : MonoBehaviour {
             BankManager.Instance.ChangeScore(PointsForFlyingPart, PlayerID);
             Destroy(other.gameObject);
             float pointsRatio = (float)BankManager.Instance.Scores[PlayerID] / (float)BankManager.Instance.MaxPoints;
-            Debug.Log(pointsRatio);
             transform.position = new Vector3(InitialBanksModelPosition.x, InitialBanksModelPosition.y + pointsRatio * BanksHeight, InitialBanksModelPosition.z);
         }
     }
