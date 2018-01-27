@@ -135,6 +135,7 @@ public class TrumpetControl : MonoBehaviour
 
             Destroy(hit.collider.gameObject);
             StartCoroutine(SetCooldownCoroutine(ShootDelay));
+            HoldProjectile.GetComponent<Collider>().enabled = false;
         }
     }
 
@@ -186,6 +187,7 @@ public class TrumpetControl : MonoBehaviour
         rb.velocity = InitialVelocity;
         StartCoroutine(SetCooldownCoroutine(ShootCooldown));
         CurrentProjectileType = EStatics.EProjectile.None;
+        CurrentProjectileSpeed = 0.0f;
     }
 
     IEnumerator SetCooldownCoroutine(float Delay) {
