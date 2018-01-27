@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrumpetControl : MonoBehaviour {
+public class TrumpetControl : MonoBehaviour
+{
 
     [SerializeField]
     GameObject Projectile;
@@ -50,9 +51,11 @@ public class TrumpetControl : MonoBehaviour {
 
     private Vector3 InitialPosition;
     private Vector3 InitialVelocity;
+    private PlayerNumber Number;
 
     private void Awake() {
         LineRenderer = GetComponent<LineRenderer>();
+        Number = GetComponent<PlayerNumber>();
     }
 
     private void Start() {
@@ -62,27 +65,24 @@ public class TrumpetControl : MonoBehaviour {
     }
 
 
-void Update () {
+    void Update() {
         if (bIsCooldownCoroutinePlaying) { return; }
 
-        bShouldShoot = false; 
+        bShouldShoot = false;
 
-        if (Input.GetButton("Fire1")) {
+        if (Input.GetButton("Fire_" + Number.Number)) {
             if (bWasFireHandled) {
                 StartHoldingFireKey = Time.time;
                 bWasFireHandled = false;
                 CurrentProjectileSpeed = ProjectileSpeed.x;
-            }
-            else {
+            } else {
                 CurrentProjectileSpeed = Mathf.Clamp(ProjectileSpeed.x + (Time.time - StartHoldingFireKey) * RaiseVelocityTempoPerSecond, ProjectileSpeed.x, ProjectileSpeed.y);
             }
-        }
-        else if (!bWasFireHandled) {
+        } else if (!bWasFireHandled) {
             bShouldShoot = true;
             CurrentProjectileSpeed = Mathf.Clamp(ProjectileSpeed.x + (Time.time - StartHoldingFireKey) * RaiseVelocityTempoPerSecond, ProjectileSpeed.x, ProjectileSpeed.y);
             bWasFireHandled = true;
-        }
-        else {
+        } else {
             CurrentProjectileSpeed = ProjectileSpeed.x;
         }
 
@@ -91,13 +91,12 @@ void Update () {
 
         if (bShouldShoot) {
             Shoot();
-        }
-        else {
+        } else {
             PreviewProjectilePath();
         }
-	}
+    }
 
-    void PreviewProjectilePath () {
+    void PreviewProjectilePath() {
         LineRenderer.positionCount = NumOfPreviewSteps;
         Vector3 position = InitialPosition;
         Vector3 velocity = InitialVelocity;
