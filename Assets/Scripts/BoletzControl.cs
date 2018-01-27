@@ -8,10 +8,7 @@ public class BoletzControl : MonoBehaviour {
     GameObject Player;
 
     [SerializeField]
-    GameObject Camera;
-
-    [SerializeField]
-    Vector3 CameraPositionOffset;
+    BoletzCamera Camera;
 
     [SerializeField]
     Vector2 MouseSpeed;
@@ -19,7 +16,10 @@ public class BoletzControl : MonoBehaviour {
     [SerializeField]
     float Speed;
 
-	void Start () {
+    private Vector3 CameraPositionOffset;
+
+    void Start () {
+        CameraPositionOffset = Camera.CameraOffset;
         Camera.transform.position = Player.transform.position + Camera.transform.localRotation * CameraPositionOffset;
     }
 	
