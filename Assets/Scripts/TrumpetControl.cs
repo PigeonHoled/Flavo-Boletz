@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileShoot : MonoBehaviour {
+public class TrumpetControl : MonoBehaviour {
 
     [SerializeField]
     GameObject Projectile;
