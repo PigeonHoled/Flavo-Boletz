@@ -1,0 +1,129 @@
+fileFormatVersion: 2
+guid: e5ad13d4d8093f049b19ac7b28e41810
+timeCreated: 1517067817
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Glowka
+    100004: Glowka_end
+    100006: Glowna
+    100008: Glowna.001
+    100010: Glowna.001_end
+    100012: Krecik
+    100014: //RootNode
+    100016: Plecy
+    100018: PrzedniaLapka.L
+    100020: PrzedniaLapka.L_end
+    100022: PrzedniaLapka.R
+    100024: PrzedniaLapka.R_end
+    100026: TylnaLapka.L
+    100028: TylnaLapka.L_end
+    100030: TylnaLapka.R
+    100032: TylnaLapka.R_end
+    400000: Armature
+    400002: Glowka
+    400004: Glowka_end
+    400006: Glowna
+    400008: Glowna.001
+    400010: Glowna.001_end
+    400012: Krecik
+    400014: //RootNode
+    400016: Plecy
+    400018: PrzedniaLapka.L
+    400020: PrzedniaLapka.L_end
+    400022: PrzedniaLapka.R
+    400024: PrzedniaLapka.R_end
+    400026: TylnaLapka.L
+    400028: TylnaLapka.L_end
+    400030: TylnaLapka.R
+    400032: TylnaLapka.R_end
+    4300000: Krecik
+    7400000: Armature|ArmatureAction
+    7400002: Armature|PoseLib
+    9500000: //RootNode
+    13700000: Krecik
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 79ab803be53684442bdee5a0c9b45aac, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
