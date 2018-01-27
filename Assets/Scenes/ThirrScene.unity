@@ -365,16 +365,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d058ac8e538594b43b8b6ded07933e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 1793130621849576, guid: d627ecef55f3de045b3b06afe1060f18, type: 2}
+  MoleProjectile: {fileID: 1793130621849576, guid: d627ecef55f3de045b3b06afe1060f18,
+    type: 2}
+  CoakroachProjectile: {fileID: 1793130621849576, guid: d627ecef55f3de045b3b06afe1060f18,
+    type: 2}
   TrumpetOffset: 1
-  Camera: {fileID: 514337784}
-  Cooldown: 1
+  BoletzCamera: {fileID: 514337784}
+  Camera: {fileID: 514337786}
+  PlaneMolehole: {fileID: 1257912768}
+  CatchRadius: 5
+  ShootCooldown: 3
+  ShootDelay: 0.5
   ProjectileSpeed: {x: 20, y: 40}
   RaiseVelocityTempoPerSecond: 10
+  CrosshairRelativePosition: {x: 0.5, y: 0.5}
   CommonDistance: 50
   RaiseVelocityUpwardsAngle: 20
   NumOfPreviewSteps: 50
   PreviewDeltaTimeStep: 0.1
+  XRayDuration: 3
+  XRayCooldown: 6
 --- !u!114 &176822291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,9 +831,9 @@ GameObject:
   - component: {fileID: 647166854}
   - component: {fileID: 647166859}
   - component: {fileID: 647166858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mole
-  m_TagString: Untagged
+  m_TagString: Mole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -888,7 +898,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 647166853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.5, y: -4.71, z: 0}
+  m_LocalPosition: {x: -0.5, y: -0.03, z: 10.57}
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
@@ -900,7 +910,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 647166853}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb5ac27227c43574a84e495806d7f84e, type: 3}
   m_Name: 
@@ -924,6 +934,74 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &698008836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 698008837}
+  - component: {fileID: 698008839}
+  - component: {fileID: 698008838}
+  m_Layer: 5
+  m_Name: Image (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &698008837
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 698008836}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 0.9999999}
+  m_Children: []
+  m_Father: {fileID: 996202649}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -200, y: 0}
+  m_SizeDelta: {x: 5, y: 5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &698008838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 698008836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &698008839
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 698008836}
 --- !u!1 &883225324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,6 +1119,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1577311536}
+  - {fileID: 698008837}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1508,7 +1587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 200, y: 0}
   m_SizeDelta: {x: 5, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1577311537
@@ -1656,16 +1735,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d058ac8e538594b43b8b6ded07933e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 1793130621849576, guid: d627ecef55f3de045b3b06afe1060f18, type: 2}
+  MoleProjectile: {fileID: 1793130621849576, guid: d627ecef55f3de045b3b06afe1060f18,
+    type: 2}
+  CoakroachProjectile: {fileID: 1793130621849576, guid: d627ecef55f3de045b3b06afe1060f18,
+    type: 2}
   TrumpetOffset: 1
-  Camera: {fileID: 547911707}
-  Cooldown: 1
+  BoletzCamera: {fileID: 547911707}
+  Camera: {fileID: 547911705}
+  PlaneMolehole: {fileID: 1257912768}
+  CatchRadius: 10
+  ShootCooldown: 3
+  ShootDelay: 0.5
   ProjectileSpeed: {x: 20, y: 40}
   RaiseVelocityTempoPerSecond: 10
+  CrosshairRelativePosition: {x: 0.5, y: 0.5}
   CommonDistance: 50
   RaiseVelocityUpwardsAngle: 20
   NumOfPreviewSteps: 50
   PreviewDeltaTimeStep: 0.1
+  XRayDuration: 3
+  XRayCooldown: 6
 --- !u!120 &1656455221
 LineRenderer:
   m_ObjectHideFlags: 0

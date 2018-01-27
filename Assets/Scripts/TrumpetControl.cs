@@ -56,6 +56,12 @@ public class TrumpetControl : MonoBehaviour
     [SerializeField]
     float PreviewDeltaTimeStep = 0.1f;
 
+    [SerializeField]
+    float XRayDuration = 3.0f;
+
+    [SerializeField]
+    float XRayCooldown = 6.0f;
+
     private LineRenderer LineRenderer;
     private Quaternion TowardsCrosshairRotation;
     private Quaternion RaiseVelocityUpwardsRotation;
@@ -75,6 +81,7 @@ public class TrumpetControl : MonoBehaviour
 
     private EStatics.EProjectile CurrentProjectileType = EStatics.EProjectile.None;
     private GameObject HoldProjectile;
+    private bool bIsXRayReady = true;
 
     private void Awake() {
         LineRenderer = GetComponent<LineRenderer>();
@@ -88,15 +95,27 @@ public class TrumpetControl : MonoBehaviour
         CatchRadius += Mathf.Abs(BoletzCamera.CameraOffset.z);
     }
 
+    void Update() {
+        if (Input.GetButtonDown("Listen_" + Number.Number) && bIsXRayReady)
+            StartCoroutine(Listen());
 
-void Update () {
         if (CurrentProjectileType == EStatics.EProjectile.None) {
             CatchMode();
-        }
-        else {
+        } else {
             ShootMode();
         }
-	}
+    }
+
+    IEnumerator Listen() {
+        bIsXRayReady = false;
+        PlaneMolehole.material.color = new Color(PlaneMolehole.material.color.r, PlaneMolehole.material.color.g, PlaneMolehole.material.color.b, 0.5f);
+
+        yield return new WaitForSeconds(XRayDuration);
+        PlaneMolehole.material.color = new Color(PlaneMolehole.material.color.r, PlaneMolehole.material.color.g, PlaneMolehole.material.color.b, 1.0f);
+
+        yield return new WaitForSeconds(XRayCooldown);
+        bIsXRayReady = true;
+    }
 
     void CatchMode() {
         if (!Input.GetButton("Fire_" + Number.Number)) { return; }
@@ -110,8 +129,7 @@ void Update () {
             Vector3 InitialPosition = BoletzCamera.transform.position + TowardsCrosshairRotation * BoletzCamera.transform.rotation * new Vector3(-BoletzCamera.CameraOffset.x, -BoletzCamera.CameraOffset.y, -BoletzCamera.CameraOffset.z + TrumpetOffset);
             if (CurrentProjectileType == EStatics.EProjectile.Mole) {
                 HoldProjectile = Instantiate(MoleProjectile, InitialPosition, BoletzCamera.transform.rotation);
-            }
-            else if (CurrentProjectileType == EStatics.EProjectile.Coakroach) {
+            } else if (CurrentProjectileType == EStatics.EProjectile.Coakroach) {
                 HoldProjectile = Instantiate(CoakroachProjectile, InitialPosition, BoletzCamera.transform.rotation);
             }
 
@@ -126,7 +144,17 @@ void Update () {
 
         HoldProjectile.transform.position = InitialPosition;
         HoldProjectile.transform.rotation = BoletzCamera.transform.rotation;
-	}
+        PreviewProjectilePath();
+
+        if (bIsCooldownCoroutinePlaying)
+            return;
+
+        if (Input.GetButton("Fire_" + Number.Number))
+            CurrentProjectileSpeed += Time.deltaTime * RaiseVelocityTempoPerSecond;
+
+        if (Input.GetButtonUp("Fire_" + Number.Number))
+            Shoot();
+    }
 
     void PreviewProjectilePath() {
         LineRenderer.positionCount = NumOfPreviewSteps;
@@ -139,8 +167,7 @@ void Update () {
             if (ShouldEndInNextNextIteration == 2) {
                 LineRenderer.positionCount = i;
                 return;
-            }
-            else if (ShouldEndInNextNextIteration == 1) {
+            } else if (ShouldEndInNextNextIteration == 1) {
                 ShouldEndInNextNextIteration++;
             }
             lastPosition = position;
