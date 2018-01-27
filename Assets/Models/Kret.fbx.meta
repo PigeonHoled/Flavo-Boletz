@@ -49,11 +49,11 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material
-    second: {fileID: 2100000, guid: 79ab803be53684442bdee5a0c9b45aac, type: 2}
+    second: {fileID: 2100000, guid: 54198358fd0ae9042b6c6f0af6fd823f, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
     materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
