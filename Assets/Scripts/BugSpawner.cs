@@ -22,6 +22,7 @@ public class BugSpawner : MonoBehaviour {
 
 
     private void Start() {
+        Spawn();
         StartSpawnCoroutine();
     }
 

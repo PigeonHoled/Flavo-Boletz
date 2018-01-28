@@ -24,6 +24,8 @@ public class Mole : MonoBehaviour {
         MoleManager.Instance.OnListenStart += OnListenStart;
         MoleManager.Instance.OnListenStop += OnListenStop;
 
+        Destroy(this.gameObject, 4);
+
         rb = GetComponent<Rigidbody>();
         if (MoleholeCenter != null)
             transform.position = new Vector3(transform.position.x, MoleholeCenter.position.y, transform.position.z);
