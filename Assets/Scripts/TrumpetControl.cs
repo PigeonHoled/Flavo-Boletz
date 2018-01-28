@@ -82,6 +82,7 @@ public class TrumpetControl : MonoBehaviour
     private EStatics.EProjectile CurrentProjectileType = EStatics.EProjectile.None;
     private GameObject HoldProjectile;
     private bool bIsXRayReady = true;
+    private bool bIsShooting = false;
 
     private void Awake() {
         LineRenderer = GetComponent<LineRenderer>();
@@ -96,7 +97,7 @@ public class TrumpetControl : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetButtonDown("Listen_" + Number.Number) && bIsXRayReady)
+        if (Input.GetButtonDown("Listen_" + Number.Number) && bIsXRayReady && !bIsShooting)
             StartCoroutine(Listen());
 
         if (CurrentProjectileType == EStatics.EProjectile.None) {
@@ -108,10 +109,15 @@ public class TrumpetControl : MonoBehaviour
 
     IEnumerator Listen() {
         bIsXRayReady = false;
-        PlaneMolehole.material.color = new Color(PlaneMolehole.material.color.r, PlaneMolehole.material.color.g, PlaneMolehole.material.color.b, 0.5f);
+        if (MoleManager.Instance.OnListenStart != null)
+            MoleManager.Instance.OnListenStart.Invoke();
+
+        //PlaneMolehole.material.color = new Color(PlaneMolehole.material.color.r, PlaneMolehole.material.color.g, PlaneMolehole.material.color.b, 0.5f);
 
         yield return new WaitForSeconds(XRayDuration);
-        PlaneMolehole.material.color = new Color(PlaneMolehole.material.color.r, PlaneMolehole.material.color.g, PlaneMolehole.material.color.b, 1.0f);
+        //PlaneMolehole.material.color = new Color(PlaneMolehole.material.color.r, PlaneMolehole.material.color.g, PlaneMolehole.material.color.b, 1.0f);
+        if (MoleManager.Instance.OnListenStop != null)
+            MoleManager.Instance.OnListenStop.Invoke();
 
         yield return new WaitForSeconds(XRayCooldown);
         bIsXRayReady = true;
@@ -136,6 +142,7 @@ public class TrumpetControl : MonoBehaviour
             Destroy(hit.collider.gameObject);
             StartCoroutine(SetCooldownCoroutine(ShootDelay));
             HoldProjectile.GetComponent<Collider>().enabled = false;
+            bIsShooting = true;
         }
     }
 
@@ -188,6 +195,7 @@ public class TrumpetControl : MonoBehaviour
         StartCoroutine(SetCooldownCoroutine(ShootCooldown));
         CurrentProjectileType = EStatics.EProjectile.None;
         CurrentProjectileSpeed = 0.0f;
+        bIsShooting = false;
     }
 
     IEnumerator SetCooldownCoroutine(float Delay) {

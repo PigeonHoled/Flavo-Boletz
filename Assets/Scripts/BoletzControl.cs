@@ -19,6 +19,7 @@ public class BoletzControl : MonoBehaviour
     [SerializeField]
     float JumpForce;
 
+    private bool bJumpOnCooldown = false;
     private Vector3 CameraPositionOffset;
     private PlayerNumber Number;
     private Rigidbody Rigid;
@@ -34,8 +35,11 @@ public class BoletzControl : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetButtonDown("Jump_" + Number.Number))
+        if (Input.GetButtonDown("Jump_" + Number.Number) && !bJumpOnCooldown) {
+            bJumpOnCooldown = true;
             Rigid.AddForce(transform.up * JumpForce);
+            Invoke("ResetJumpCooldown", 1.0f);
+        }
 
         float playerHorizontalMovement = Input.GetAxis("Horizontal_" + Number.Number);
         float playerVerticalMovement = Input.GetAxis("Vertical_" + Number.Number);
@@ -58,13 +62,23 @@ public class BoletzControl : MonoBehaviour
             xAngle -= 360;
         }
 
-        xAngle = (xAngle <= 179) ? Mathf.Clamp(xAngle, 0, 70) : Mathf.Clamp(xAngle, 345, 360);
+        //clamping camera range
+        xAngle = (xAngle <= 179) ? Mathf.Clamp(xAngle, 0, 60) : Mathf.Clamp(xAngle, 300, 360);
         cameraRotation = new Vector3(xAngle, cameraRotation.y + cameraHorizontalAngle, cameraRotation.z);
         Camera.transform.localRotation = Quaternion.Euler(cameraRotation);
+
+        //offset modifier
+        Vector3 trueCameraOffset = CameraPositionOffset * (0.7f * (1.0f - Mathf.Abs((xAngle > 179) ? xAngle - 360.0f : xAngle) / 60.0f) + 0.3f);
 
         Quaternion playerRotation = Player.transform.localRotation;
         Player.transform.localRotation = Quaternion.Euler(new Vector3(playerRotation.x, cameraRotation.y, playerRotation.z));
 
-        Camera.transform.position = Player.transform.position + Camera.transform.localRotation * CameraPositionOffset;
+        Vector3 offsetRot = Camera.transform.localRotation * trueCameraOffset;
+        Camera.transform.position = Player.transform.position + new Vector3(offsetRot.x, CameraPositionOffset.y - ((xAngle > 179) ? (360.0f - xAngle) / 60.0f * 2.0f : 0.0f), offsetRot.z);
+        //Camera.transform.position = new Vector3(Camera.transform.position.x, CameraPositionOffset.y, Camera.transform.position.z);
+    }
+
+    private void ResetJumpCooldown() {
+        bJumpOnCooldown = false;
     }
 }

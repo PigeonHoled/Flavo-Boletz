@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 4414713798476742}
   - component: {fileID: 137113319467473050}
   m_Layer: 0
-  m_Name: Krecik
+  m_Name: Outline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -112,6 +112,22 @@ GameObject:
   - component: {fileID: 4552696106188244}
   m_Layer: 0
   m_Name: TylnaLapka.L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1527844088653530
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4199265448361002}
+  - component: {fileID: 137523770715543732}
+  m_Layer: 0
+  m_Name: Krecik
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -300,6 +316,19 @@ Transform:
   m_Father: {fileID: 4771263835363040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4199265448361002
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527844088653530}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_Children: []
+  m_Father: {fileID: 4365293056951744}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4331220888370560
 Transform:
   m_ObjectHideFlags: 1
@@ -325,6 +354,7 @@ Transform:
   m_LocalScale: {x: 0.41893464, y: 0.4189346, z: 0.10473365}
   m_Children:
   - {fileID: 4331220888370560}
+  - {fileID: 4199265448361002}
   - {fileID: 4414713798476742}
   m_Father: {fileID: 4816816322801836}
   m_RootOrder: 0
@@ -349,12 +379,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287810239893662}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0.0000014227671, y: 0, z: 0}
+  m_LocalScale: {x: 100.000015, y: 99.999954, z: 99.999954}
   m_Children: []
   m_Father: {fileID: 4365293056951744}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4454160734912220
 Transform:
@@ -517,7 +547,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690282356160198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.99, y: -0.03, z: -12.79}
+  m_LocalPosition: {x: -22.1, y: -0.03, z: 10.57}
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_Children:
   - {fileID: 4365293056951744}
@@ -596,12 +626,67 @@ MonoBehaviour:
   StraightMoveDuration: {x: 5, y: 12}
   MoleholeCenter: {fileID: 0}
   ChangeDirectionAngle: {x: 40, y: 100}
+  OutlineRenderer: {fileID: 137113319467473050}
 --- !u!137 &137113319467473050
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287810239893662}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: b65bd5881ddc76948bb261e00227a7fa, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: 4300000, guid: e5ad13d4d8093f049b19ac7b28e41810, type: 3}
+  m_Bones:
+  - {fileID: 4702191019707760}
+  - {fileID: 4771263835363040}
+  - {fileID: 4168620851251894}
+  - {fileID: 4485333388302244}
+  - {fileID: 4675001761964154}
+  - {fileID: 4552696106188244}
+  - {fileID: 4391116468712558}
+  - {fileID: 4454160734912220}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 4702191019707760}
+  m_AABB:
+    m_Center: {x: -0.000000014901161, y: 0.019094616, z: 0.0070644245}
+    m_Extent: {x: 0.041188594, y: 0.047535263, z: 0.026977014}
+  m_DirtyAABB: 0
+--- !u!137 &137523770715543732
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1527844088653530}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
