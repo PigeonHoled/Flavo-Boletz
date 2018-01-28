@@ -10,8 +10,7 @@ public class Mole : MonoBehaviour {
     [SerializeField]
     Vector2 StraightMoveDuration = new Vector2(4.0f, 9.0f);
 
-    [SerializeField]
-    Transform MoleholeCenter;
+    public Transform MoleholeCenter;
 
     [SerializeField]
     Vector2 ChangeDirectionAngle = new Vector2(20.0f, 100.0f);
@@ -26,7 +25,9 @@ public class Mole : MonoBehaviour {
         MoleManager.Instance.OnListenStop += OnListenStop;
 
         rb = GetComponent<Rigidbody>();
-        transform.position = new Vector3(transform.position.x, MoleholeCenter.position.y, transform.position.z);
+        if (MoleholeCenter != null)
+            transform.position = new Vector3(transform.position.x, MoleholeCenter.position.y, transform.position.z);
+
         StartCoroutine();
     }
 
