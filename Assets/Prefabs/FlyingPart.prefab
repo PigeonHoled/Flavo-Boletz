@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 23356801235369048}
   - component: {fileID: 54391091408703592}
   - component: {fileID: 65804499084922326}
+  - component: {fileID: 114440894378512914}
   m_Layer: 9
   m_Name: FlyingPart
   m_TagString: Untagged
@@ -201,6 +202,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.03169582, y: 0.017283477, z: 0.030719899}
   m_Center: {x: 0.017695777, y: -0.0034806137, z: 0.00053305563}
+--- !u!114 &114440894378512914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935946715539852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7bbff336b5a8247860ba14d55c0d9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114977924244788008
 MonoBehaviour:
   m_ObjectHideFlags: 1

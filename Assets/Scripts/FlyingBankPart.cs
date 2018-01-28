@@ -36,6 +36,12 @@ public class FlyingBankPart : MonoBehaviour {
         bWasHit = true;
     }
 
+    public void Hit () {
+        rb.useGravity = true;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        bWasHit = true;
+    }
+
     public void OnCollisionEnter(Collision collision) {
         bWasHit = true;
         rb.useGravity = true;
