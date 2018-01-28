@@ -16,12 +16,31 @@ public class Mole : MonoBehaviour {
     [SerializeField]
     Vector2 ChangeDirectionAngle = new Vector2(20.0f, 100.0f);
 
+    [SerializeField]
+    SkinnedMeshRenderer OutlineRenderer;
+
     Rigidbody rb;
 
     private void Start() {
+        MoleManager.Instance.OnListenStart += OnListenStart;
+        MoleManager.Instance.OnListenStop += OnListenStop;
+
         rb = GetComponent<Rigidbody>();
         transform.position = new Vector3(transform.position.x, MoleholeCenter.position.y, transform.position.z);
         StartCoroutine();
+    }
+
+    private void OnDestroy() {
+        MoleManager.Instance.OnListenStart -= OnListenStart;
+        MoleManager.Instance.OnListenStop -= OnListenStop;
+    }
+
+    private void OnListenStart() {
+        OutlineRenderer.enabled = true;
+    }
+
+    private void OnListenStop() {
+        OutlineRenderer.enabled = false;
     }
 
     private void StartCoroutine() {
