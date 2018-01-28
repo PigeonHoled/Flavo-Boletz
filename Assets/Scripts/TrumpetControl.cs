@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TrumpetControl : MonoBehaviour
 {
+    [SerializeField]
+    GameObject ShootPosGo;
 
     [SerializeField]
     GameObject MoleProjectile;
@@ -147,7 +149,7 @@ public class TrumpetControl : MonoBehaviour
     }
 
     void ShootMode() {
-        InitialPosition = BoletzCamera.transform.position + TowardsCrosshairRotation * BoletzCamera.transform.rotation * new Vector3(-BoletzCamera.CameraOffset.x, -BoletzCamera.CameraOffset.y, -BoletzCamera.CameraOffset.z + TrumpetOffset);
+        InitialPosition = ShootPosGo.transform.position;
         InitialVelocity = TowardsCrosshairRotation * BoletzCamera.transform.rotation * RaiseVelocityUpwardsRotation * new Vector3(0.0f, 0.0f, CurrentProjectileSpeed);
 
         HoldProjectile.transform.position = InitialPosition;
