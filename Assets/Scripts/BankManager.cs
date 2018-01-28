@@ -41,6 +41,7 @@ public class BankManager : MonoBehaviour {
         Scores[PlayerID] += ChangeInPoints;
         if (Scores[PlayerID] >= maxPoints) {
             scoreText.text = "Player " + (PlayerID + 1).ToString() + " Won";
+            StartCoroutine(EndGame());
         }
     }
 
