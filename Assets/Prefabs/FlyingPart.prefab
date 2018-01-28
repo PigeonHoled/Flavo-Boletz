@@ -56,7 +56,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1935946715539852}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 19.29, z: 0}
+  m_LocalPosition: {x: -14.414907, y: 5.58, z: -4.4869213}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children:
   - {fileID: 4904412382195024}
@@ -71,7 +71,7 @@ Transform:
   m_GameObject: {fileID: 1781252339942606}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0.0179, y: -0.0037, z: -0.0277}
-  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4146248088195280}
   m_RootOrder: 0
@@ -92,7 +92,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 8053973045922f64f8e7907932f2b079, type: 2}
   - {fileID: 2100000, guid: e092cb62496c36948a224747bcd7e8de, type: 2}
-  - {fileID: 2100000, guid: 7cbb9299656cbb545a551b03f7f2ea34, type: 2}
+  - {fileID: 2100000, guid: 8053973045922f64f8e7907932f2b079, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -126,9 +126,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: b3f467e88b36efe45acdce3a920e82cd, type: 2}
-  - {fileID: 2100000, guid: b9259b8696efeb047afca00e666e40a2, type: 2}
-  - {fileID: 2100000, guid: 4dd07816d44f7d446be1d9657562e58b, type: 2}
+  - {fileID: 2100000, guid: bfd4c4545b7cc4d42aa3b22ac74ae170, type: 2}
+  - {fileID: 2100000, guid: 03d79814018059a42b06d1cc9ed55399, type: 2}
+  - {fileID: 2100000, guid: aaa2125d14e3ef84e96403133e223502, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -161,7 +161,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1781252339942606}
-  m_Mesh: {fileID: 4300000, guid: abf872e4ca1814f4b9d2bb332b1cd51f, type: 3}
+  m_Mesh: {fileID: 4300000, guid: ea6b004de18a15047897e24cf2c6c969, type: 3}
 --- !u!54 &54391091408703592
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -187,8 +187,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.72128564, y: 2.8923197, z: 0.84312326}
-  m_Center: {x: 0.19495365, y: 0.15033682, z: -0.06148693}
+  m_Size: {x: 0.1, y: 0.3, z: 0.12}
+  m_Center: {x: 0.02, y: 0.03, z: -0.01}
 --- !u!65 &65804499084922326
 BoxCollider:
   m_ObjectHideFlags: 1

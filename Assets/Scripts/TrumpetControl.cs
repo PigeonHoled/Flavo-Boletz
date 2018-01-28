@@ -191,7 +191,7 @@ public class TrumpetControl : MonoBehaviour
 
     void Shoot() {
         Destroy(HoldProjectile);
-        GameObject sentProjectile = Instantiate(MoleProjectile, InitialPosition, BoletzCamera.transform.rotation);
+        GameObject sentProjectile = Instantiate((CurrentProjectileType == EStatics.EProjectile.Coakroach) ? CoakroachProjectile : MoleProjectile, InitialPosition, BoletzCamera.transform.rotation);
         Rigidbody rb = sentProjectile.GetComponent<Rigidbody>();
         rb.velocity = InitialVelocity;
         StartCoroutine(SetCooldownCoroutine(ShootCooldown));
