@@ -31,6 +31,7 @@ public class BoletzControl : MonoBehaviour
     private TrumpetControl Control;
 
     private bool bIsMoving = false;
+    private bool bJumpPossible = true;
 
     private void Awake() {
         Number = GetComponent<PlayerNumber>();
@@ -44,10 +45,11 @@ public class BoletzControl : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetButtonDown("Jump_" + Number.Number) && !bJumpOnCooldown) {
+        if (Input.GetButtonDown("Jump_" + Number.Number) && bJumpPossible) {
             bJumpOnCooldown = true;
             Rigid.AddForce(transform.up * JumpForce);
-            Invoke("ResetJumpCooldown", 1.0f);
+            bJumpPossible = false;
+            //Invoke("ResetJumpCooldown", 5.0f);
         }
 
         float playerHorizontalMovement = Input.GetAxis("Horizontal_" + Number.Number);
@@ -95,6 +97,11 @@ public class BoletzControl : MonoBehaviour
         Vector3 offsetRot = Camera.transform.localRotation * trueCameraOffset;
         Camera.transform.position = Player.transform.position + new Vector3(offsetRot.x, CameraPositionOffset.y - ((xAngle > 179) ? (360.0f - xAngle) / 60.0f * 2.0f : 0.0f), offsetRot.z);
         //Camera.transform.position = new Vector3(Camera.transform.position.x, CameraPositionOffset.y, Camera.transform.position.z);
+    }
+
+    private void OnCollisionEnter(Collision collision) {
+        if (collision.gameObject.layer == 11)
+            bJumpPossible = true;
     }
 
     private void ResetJumpCooldown() {

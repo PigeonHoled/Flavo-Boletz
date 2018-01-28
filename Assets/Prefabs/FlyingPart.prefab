@@ -212,5 +212,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c38f27adf6fce41ae9b0d49d0e0656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeConstant: 1.2
-  Amplitude: 7
+  TimeConstant: 0.8
+  Amplitude: 5
