@@ -383,8 +383,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Bratboletz|Shoot
       takeName: Bratboletz|BratboletzAction
-      firstFrame: 134
-      lastFrame: 135
+      firstFrame: 138
+      lastFrame: 139
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
