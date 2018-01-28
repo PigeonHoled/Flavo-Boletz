@@ -615,6 +615,11 @@ CapsuleCollider:
   m_Height: 18
   m_Direction: 1
   m_Center: {x: 0, y: 8.9, z: 0.62}
+--- !u!95 &333782372 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 9500000, guid: 98da03ac924b6c14788cf82a5529bb2e,
+    type: 3}
+  m_PrefabInternal: {fileID: 333782368}
 --- !u!1001 &344805836
 Prefab:
   m_ObjectHideFlags: 0
@@ -1928,6 +1933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e87080279833646bbefcc7236fa039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Anim: {fileID: 333782372}
   Player: {fileID: 333782370}
   Camera: {fileID: 547911707}
   MouseSpeed: {x: 35, y: 40}
@@ -1944,6 +1950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d058ac8e538594b43b8b6ded07933e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Anim: {fileID: 333782372}
   ShootPosGo: {fileID: 1510749695}
   MoleProjectile: {fileID: 1629854421599014, guid: 688b674d1684a8e47a1aa9b1bace7bf9,
     type: 2}
