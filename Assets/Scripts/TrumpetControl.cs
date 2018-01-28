@@ -5,6 +5,9 @@ using UnityEngine;
 public class TrumpetControl : MonoBehaviour
 {
     [SerializeField]
+    Animator Anim;
+
+    [SerializeField]
     GameObject ShootPosGo;
 
     [SerializeField]
@@ -78,17 +81,19 @@ public class TrumpetControl : MonoBehaviour
     private Vector3 InitialPosition;
     private Vector3 InitialVelocity;
     private PlayerNumber Number;
+    private BoletzControl Control;
 
     private Vector2 CrosshairPosition;
 
     private EStatics.EProjectile CurrentProjectileType = EStatics.EProjectile.None;
     private GameObject HoldProjectile;
     private bool bIsXRayReady = true;
-    private bool bIsShooting = false;
+    public bool bIsShooting = false;
 
     private void Awake() {
         LineRenderer = GetComponent<LineRenderer>();
         Number = GetComponent<PlayerNumber>();
+        Control = GetComponent<BoletzControl>();
     }
 
     private void Start() {
@@ -110,6 +115,9 @@ public class TrumpetControl : MonoBehaviour
     }
 
     IEnumerator Listen() {
+        Anim.Play("Listen");
+        Control.bIsListening = true;
+
         bIsXRayReady = false;
         if (MoleManager.Instance.OnListenStart != null)
             MoleManager.Instance.OnListenStart.Invoke();
@@ -120,6 +128,7 @@ public class TrumpetControl : MonoBehaviour
         //PlaneMolehole.material.color = new Color(PlaneMolehole.material.color.r, PlaneMolehole.material.color.g, PlaneMolehole.material.color.b, 1.0f);
         if (MoleManager.Instance.OnListenStop != null)
             MoleManager.Instance.OnListenStop.Invoke();
+        Control.bIsListening = false;
 
         yield return new WaitForSeconds(XRayCooldown);
         bIsXRayReady = true;
@@ -145,6 +154,7 @@ public class TrumpetControl : MonoBehaviour
             StartCoroutine(SetCooldownCoroutine(ShootDelay));
             HoldProjectile.GetComponent<Collider>().enabled = false;
             bIsShooting = true;
+            Anim.Play("Shoot");
         }
     }
 
