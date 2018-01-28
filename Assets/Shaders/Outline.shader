@@ -59,6 +59,8 @@ Shader "Outlined/Silhouette Only" {
 		Pass{
 		Name "OUTLINE"
 		Tags{ "LightMode" = "Always" }
+		//ZWrite Off
+		ZTest Off
 		Cull Front
 
 		// you can choose what kind of blending mode you want for the outline

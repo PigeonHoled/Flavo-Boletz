@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BoletzControl : MonoBehaviour
 {
+    public bool bIsListening = false;
+
+    [SerializeField]
+    Animator Anim;
+
     [SerializeField]
     GameObject Player;
 
@@ -23,10 +28,14 @@ public class BoletzControl : MonoBehaviour
     private Vector3 CameraPositionOffset;
     private PlayerNumber Number;
     private Rigidbody Rigid;
+    private TrumpetControl Control;
+
+    private bool bIsMoving = false;
 
     private void Awake() {
         Number = GetComponent<PlayerNumber>();
         Rigid = GetComponent<Rigidbody>();
+        Control = GetComponent<TrumpetControl>();
     }
 
     void Start() {
@@ -44,7 +53,17 @@ public class BoletzControl : MonoBehaviour
         float playerHorizontalMovement = Input.GetAxis("Horizontal_" + Number.Number);
         float playerVerticalMovement = Input.GetAxis("Vertical_" + Number.Number);
 
-        if (Mathf.Approximately(playerHorizontalMovement, 0.0f) && Mathf.Approximately(playerVerticalMovement, 0.0f)) { return; }
+        if (Mathf.Approximately(playerHorizontalMovement, 0.0f) && Mathf.Approximately(playerVerticalMovement, 0.0f)) {
+            if (bIsMoving && !bIsListening && !Control.bIsShooting)
+                Anim.Play("Idle");
+            bIsMoving = false;
+            return;
+        }
+
+        if (!bIsMoving && !bIsListening && !Control.bIsShooting) {
+            Anim.Play("Move");
+            bIsMoving = true;
+        }
 
         Vector3 playerTranslation = Speed * Time.deltaTime * Vector3.Normalize(new Vector3(playerHorizontalMovement, 0, playerVerticalMovement));
         Player.transform.position = Player.transform.position + Player.transform.localRotation * playerTranslation;

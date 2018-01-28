@@ -15,26 +15,26 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Marmur
-    second: {fileID: 2100000, guid: aaa2125d14e3ef84e96403133e223502, type: 2}
+    second: {fileID: 2100000, guid: 4dd07816d44f7d446be1d9657562e58b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trompeta
-    second: {fileID: 2100000, guid: 164ee7badced9e344b69793828b7451c, type: 2}
+    second: {fileID: 2100000, guid: c17a07acef71fa44daf6db6f4689d779, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trompeta.boquilla
-    second: {fileID: 2100000, guid: 9ff2370efb4b39d4cab45bc0d5945cf7, type: 2}
+    second: {fileID: 2100000, guid: 0f85501ce876d284bab4f612028f4f5e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trompeta.boquilla.001
-    second: {fileID: 2100000, guid: df50c18a361fbb245b01b6f771760339, type: 2}
+    second: {fileID: 2100000, guid: 615bcf93bf0ffd842b58a9a49213f64b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
-    materialSearch: 1
+    materialSearch: 2
     materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
@@ -73,6 +73,8 @@ ModelImporter:
     optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
