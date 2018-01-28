@@ -138,7 +138,7 @@ public class TrumpetControl : MonoBehaviour
         if (!Input.GetButton("Fire_" + Number.Number)) { return; }
 
         CrosshairPosition = new Vector2(CrosshairRelativePosition.x * Camera.pixelWidth, CrosshairRelativePosition.y * Camera.pixelHeight);
-        Ray ray = Camera.ScreenPointToRay(CrosshairPosition);
+        Ray ray = Camera.ViewportPointToRay(CrosshairRelativePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, CatchRadius, 1 << LayerMask.NameToLayer("Projectile"))) {
             CurrentProjectileType = EStatics.StringToEProjectile.Get[hit.collider.gameObject.tag];
