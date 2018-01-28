@@ -1,0 +1,654 @@
+fileFormatVersion: 2
+guid: 98ee22d82211d134b8a1b26c544739dd
+timeCreated: 1517133300
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Buttercup
+    100002: Cube
+    100004: Cube.003
+    100006: Cube.004
+    100008: Cube.005
+    100010: Cube.006
+    100012: Cube.007
+    100014: Cube.008
+    100016: Cube.009
+    100018: Cube.011
+    100020: Cube.012
+    100022: Cube.013
+    100024: Cube.015
+    100026: Cube.016
+    100028: Cube.017
+    100030: Cube.018
+    100032: Cube.019
+    100034: Cube.020
+    100036: Cube.021
+    100038: Cube.022
+    100040: Cube.023
+    100042: Cube.024
+    100044: Cube.025
+    100046: Cube.026
+    100048: Cube.027
+    100050: Cube.028
+    100052: Cube.029
+    100054: Cube.030
+    100056: Cube.031
+    100058: Cube.032
+    100060: Cube.034
+    100062: Cube.035
+    100064: Cube.036
+    100066: Cube.038
+    100068: Cube.039
+    100070: Cube.040
+    100072: Cube.041
+    100074: Cube.042
+    100076: Cube.043
+    100078: Cube.044
+    100080: Cube.045
+    100082: Log 1
+    100084: Log 2
+    100086: Log 3
+    100088: Log 4
+    100090: LongTreeLine
+    100092: Mesh.004
+    100094: Mesh.006
+    100096: Mesh.007
+    100098: Mesh.011
+    100100: Rock 1
+    100102: Rock 2
+    100104: Rock 3
+    100106: //RootNode
+    100108: Short Grass
+    100110: Short Grass_MeshPart0
+    100112: Short Grass_MeshPart1
+    100114: Short Grass_MeshPart2
+    100116: Sun Blue Fill
+    100118: Sun.002
+    100120: Sunset.JPG
+    100122: Thistle
+    100124: Tree Braches 2
+    100126: Tree Branches
+    100128: Tree Branches 2
+    100130: Tree Branches 3
+    100132: Tree Branches 3.001
+    100134: Tree Branches 3.001_MeshPart0
+    100136: Tree Branches 3.001_MeshPart1
+    100138: Tree Branches 3_MeshPart0
+    100140: Tree Branches 3_MeshPart1
+    100142: Tree Branches.001
+    100144: Tree Leaves
+    100146: Tree Leaves.001
+    100148: Tree Trunk
+    100150: Tree Trunk.001
+    400000: Buttercup
+    400002: Cube
+    400004: Cube.003
+    400006: Cube.004
+    400008: Cube.005
+    400010: Cube.006
+    400012: Cube.007
+    400014: Cube.008
+    400016: Cube.009
+    400018: Cube.011
+    400020: Cube.012
+    400022: Cube.013
+    400024: Cube.015
+    400026: Cube.016
+    400028: Cube.017
+    400030: Cube.018
+    400032: Cube.019
+    400034: Cube.020
+    400036: Cube.021
+    400038: Cube.022
+    400040: Cube.023
+    400042: Cube.024
+    400044: Cube.025
+    400046: Cube.026
+    400048: Cube.027
+    400050: Cube.028
+    400052: Cube.029
+    400054: Cube.030
+    400056: Cube.031
+    400058: Cube.032
+    400060: Cube.034
+    400062: Cube.035
+    400064: Cube.036
+    400066: Cube.038
+    400068: Cube.039
+    400070: Cube.040
+    400072: Cube.041
+    400074: Cube.042
+    400076: Cube.043
+    400078: Cube.044
+    400080: Cube.045
+    400082: Log 1
+    400084: Log 2
+    400086: Log 3
+    400088: Log 4
+    400090: LongTreeLine
+    400092: Mesh.004
+    400094: Mesh.006
+    400096: Mesh.007
+    400098: Mesh.011
+    400100: Rock 1
+    400102: Rock 2
+    400104: Rock 3
+    400106: //RootNode
+    400108: Short Grass
+    400110: Short Grass_MeshPart0
+    400112: Short Grass_MeshPart1
+    400114: Short Grass_MeshPart2
+    400116: Sun Blue Fill
+    400118: Sun.002
+    400120: Sunset.JPG
+    400122: Thistle
+    400124: Tree Braches 2
+    400126: Tree Branches
+    400128: Tree Branches 2
+    400130: Tree Branches 3
+    400132: Tree Branches 3.001
+    400134: Tree Branches 3.001_MeshPart0
+    400136: Tree Branches 3.001_MeshPart1
+    400138: Tree Branches 3_MeshPart0
+    400140: Tree Branches 3_MeshPart1
+    400142: Tree Branches.001
+    400144: Tree Leaves
+    400146: Tree Leaves.001
+    400148: Tree Trunk
+    400150: Tree Trunk.001
+    2300000: Buttercup
+    2300002: Cube
+    2300004: Cube.003
+    2300006: Cube.004
+    2300008: Cube.005
+    2300010: Cube.006
+    2300012: Cube.007
+    2300014: Cube.008
+    2300016: Cube.009
+    2300018: Cube.011
+    2300020: Cube.012
+    2300022: Cube.013
+    2300024: Cube.015
+    2300026: Cube.016
+    2300028: Cube.017
+    2300030: Cube.018
+    2300032: Cube.019
+    2300034: Cube.020
+    2300036: Cube.021
+    2300038: Cube.022
+    2300040: Cube.023
+    2300042: Cube.024
+    2300044: Cube.025
+    2300046: Cube.026
+    2300048: Cube.027
+    2300050: Cube.028
+    2300052: Cube.029
+    2300054: Cube.030
+    2300056: Cube.031
+    2300058: Cube.032
+    2300060: Cube.034
+    2300062: Cube.035
+    2300064: Cube.036
+    2300066: Cube.038
+    2300068: Cube.039
+    2300070: Cube.040
+    2300072: Cube.041
+    2300074: Cube.042
+    2300076: Cube.043
+    2300078: Cube.044
+    2300080: Cube.045
+    2300082: Log 1
+    2300084: Log 2
+    2300086: Log 3
+    2300088: Log 4
+    2300090: LongTreeLine
+    2300092: Mesh.004
+    2300094: Mesh.006
+    2300096: Mesh.007
+    2300098: Mesh.011
+    2300100: Rock 1
+    2300102: Rock 2
+    2300104: Rock 3
+    2300106: Short Grass_MeshPart0
+    2300108: Short Grass_MeshPart1
+    2300110: Short Grass_MeshPart2
+    2300112: Sunset.JPG
+    2300114: Thistle
+    2300116: Tree Braches 2
+    2300118: Tree Branches
+    2300120: Tree Branches 2
+    2300122: Tree Branches 3.001_MeshPart0
+    2300124: Tree Branches 3.001_MeshPart1
+    2300126: Tree Branches 3_MeshPart0
+    2300128: Tree Branches 3_MeshPart1
+    2300130: Tree Branches.001
+    2300132: Tree Leaves
+    2300134: Tree Leaves.001
+    2300136: Tree Trunk
+    2300138: Tree Trunk.001
+    3300000: Buttercup
+    3300002: Cube
+    3300004: Cube.003
+    3300006: Cube.004
+    3300008: Cube.005
+    3300010: Cube.006
+    3300012: Cube.007
+    3300014: Cube.008
+    3300016: Cube.009
+    3300018: Cube.011
+    3300020: Cube.012
+    3300022: Cube.013
+    3300024: Cube.015
+    3300026: Cube.016
+    3300028: Cube.017
+    3300030: Cube.018
+    3300032: Cube.019
+    3300034: Cube.020
+    3300036: Cube.021
+    3300038: Cube.022
+    3300040: Cube.023
+    3300042: Cube.024
+    3300044: Cube.025
+    3300046: Cube.026
+    3300048: Cube.027
+    3300050: Cube.028
+    3300052: Cube.029
+    3300054: Cube.030
+    3300056: Cube.031
+    3300058: Cube.032
+    3300060: Cube.034
+    3300062: Cube.035
+    3300064: Cube.036
+    3300066: Cube.038
+    3300068: Cube.039
+    3300070: Cube.040
+    3300072: Cube.041
+    3300074: Cube.042
+    3300076: Cube.043
+    3300078: Cube.044
+    3300080: Cube.045
+    3300082: Log 1
+    3300084: Log 2
+    3300086: Log 3
+    3300088: Log 4
+    3300090: LongTreeLine
+    3300092: Mesh.004
+    3300094: Mesh.006
+    3300096: Mesh.007
+    3300098: Mesh.011
+    3300100: Rock 1
+    3300102: Rock 2
+    3300104: Rock 3
+    3300106: Short Grass_MeshPart0
+    3300108: Short Grass_MeshPart1
+    3300110: Short Grass_MeshPart2
+    3300112: Sunset.JPG
+    3300114: Thistle
+    3300116: Tree Braches 2
+    3300118: Tree Branches
+    3300120: Tree Branches 2
+    3300122: Tree Branches 3.001_MeshPart0
+    3300124: Tree Branches 3.001_MeshPart1
+    3300126: Tree Branches 3_MeshPart0
+    3300128: Tree Branches 3_MeshPart1
+    3300130: Tree Branches.001
+    3300132: Tree Leaves
+    3300134: Tree Leaves.001
+    3300136: Tree Trunk
+    3300138: Tree Trunk.001
+    4300000: Tree Leaves.001
+    4300002: Tree Branches 3_MeshPart0
+    4300004: Tree Branches 3_MeshPart1
+    4300006: Tree Braches 2
+    4300008: Tree Branches
+    4300010: Tree Trunk
+    4300012: Sunset.JPG
+    4300014: Rock 3
+    4300016: Rock 2
+    4300018: Cube.045
+    4300020: Cube.044
+    4300022: Cube.043
+    4300024: Cube.042
+    4300026: Cube.041
+    4300028: Cube.040
+    4300030: Cube.039
+    4300032: Cube.038
+    4300034: Log 2
+    4300036: Cube.036
+    4300038: Cube.035
+    4300040: Cube.034
+    4300042: Log 1
+    4300044: Cube.032
+    4300046: Cube.031
+    4300048: Cube.030
+    4300050: Cube.029
+    4300052: Cube.028
+    4300054: Cube.027
+    4300056: Cube.026
+    4300058: Cube.025
+    4300060: Cube.024
+    4300062: Cube.023
+    4300064: Cube.022
+    4300066: Cube.021
+    4300068: Cube.020
+    4300070: Cube.019
+    4300072: Cube.018
+    4300074: Cube.017
+    4300076: Cube.016
+    4300078: Cube.015
+    4300080: Log 3
+    4300082: Cube.013
+    4300084: Cube.012
+    4300086: Cube.011
+    4300088: Log 4
+    4300090: Cube.009
+    4300092: Cube.008
+    4300094: Cube.007
+    4300096: Cube.006
+    4300098: Cube.005
+    4300100: Cube.004
+    4300102: Cube.003
+    4300104: Cube
+    4300106: Mesh.007
+    4300108: Mesh.004
+    4300110: Thistle
+    4300112: Mesh.006
+    4300114: Mesh.011
+    4300116: Short Grass_MeshPart0
+    4300118: Short Grass_MeshPart1
+    4300120: Short Grass_MeshPart2
+    4300122: Buttercup
+    4300124: Rock 1
+    4300126: LongTreeLine
+    4300128: Tree Trunk.001
+    4300130: Tree Branches.001
+    4300132: Tree Branches 2
+    4300134: Tree Branches 3.001_MeshPart0
+    4300136: Tree Branches 3.001_MeshPart1
+    4300138: Tree Leaves
+    10800000: Sun Blue Fill
+    10800002: Sun.002
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Buttercup Base
+    second: {fileID: 2100000, guid: a3ab921772cb8354d8866b1c99bff459, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ground Mat
+    second: {fileID: 2100000, guid: 29dc3f7a4f226154e961858c13da293a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Log 2
+    second: {fileID: 2100000, guid: 57c2379335fa8af45b9bc38b230e5498, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Log 4
+    second: {fileID: 2100000, guid: f72eef0c47c809646b33a32665753a93, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Quartz
+    second: {fileID: 2100000, guid: 3b62cdbc1b9b2f04f837bd61e1b150c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sunset
+    second: {fileID: 2100000, guid: 40694eca3aed5e148a5fb1c2295705c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Flower
+    second: {fileID: 2100000, guid: 6775756513b493c4e82a7c066d914ee3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Flower.001
+    second: {fileID: 2100000, guid: dc26be3833253584c8496261ce2287d4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Flower.002
+    second: {fileID: 2100000, guid: 377c9b370442e544ebf3e2da22e952fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Leaf
+    second: {fileID: 2100000, guid: 569b8d95067c596419698dc5d9d89c02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Leaf 2
+    second: {fileID: 2100000, guid: 8b946ce07dd70f040867d9c32df3d0fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Leaf 2.001
+    second: {fileID: 2100000, guid: 96fae77a91cd4044c89b96f3e79a403f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Leaf 2.002
+    second: {fileID: 2100000, guid: 752d04c7576b04f418d4b543308138e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Leaf.001
+    second: {fileID: 2100000, guid: 6af1854e9e106b847b1c93e54413ae63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Leaf.002
+    second: {fileID: 2100000, guid: 9681dd0a7181c2143b2f2b9307d7f975, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 1
+    second: {fileID: 2100000, guid: 1e861628be4412e49ba0bf70d0b814aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 1.001
+    second: {fileID: 2100000, guid: 986474fc6e5e113469fb5078ae002c44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 1.002
+    second: {fileID: 2100000, guid: ec49736b38edf1d4992abd9ef1294f3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 2
+    second: {fileID: 2100000, guid: 6383d15a4bccaa84a9b3155543db4db1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 2.001
+    second: {fileID: 2100000, guid: 31f88baaaaee63747aede51a7ee5419b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 2.002
+    second: {fileID: 2100000, guid: df99055b4a02d734bbb4ae698fab58bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 3
+    second: {fileID: 2100000, guid: 44c69112697f8a5448ac8e11f2863b60, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 3.001
+    second: {fileID: 2100000, guid: 39e5c0f38217e0e47860ed78940c3f7a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 3.002
+    second: {fileID: 2100000, guid: 067baefc1cc635f4797c7858d02e5cd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 4
+    second: {fileID: 2100000, guid: 5eecd69595d7aac4a96b4dbc13cda353, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 4.001
+    second: {fileID: 2100000, guid: 02d76015b5c2a0649b7dd2c2f3b0d14f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 4.002
+    second: {fileID: 2100000, guid: 7cdffd5fbbd32464c938aa53a391c668, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 5
+    second: {fileID: 2100000, guid: 0ebfe9816a8b0784c844adb9df738a32, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 5.001
+    second: {fileID: 2100000, guid: 8976866af6ede184297918ba98df22bd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Thistle Part 5.002
+    second: {fileID: 2100000, guid: e9825007b0763ad4889e205e00b7ad78, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bark
+    second: {fileID: 2100000, guid: 9f81a29c7a6ecb44bbbf37414d4a03a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buttercup Flower
+    second: {fileID: 2100000, guid: c54e1765a669fea449640f71b75fad39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buttercup Leaf
+    second: {fileID: 2100000, guid: 904a16f2da3f0d444984ee17093b118e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buttercup Part 1
+    second: {fileID: 2100000, guid: 4981747a265aa62419892fb309415ebf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buttercup Part 2
+    second: {fileID: 2100000, guid: 62d27b7a88308fc46b60f33dbf82c211, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buttercup Part 3
+    second: {fileID: 2100000, guid: 68520e5c76b200a4e9ee140dece280d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buttercup Part 4
+    second: {fileID: 2100000, guid: f30c54f9722b3de4aaffd901f84cb927, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: buttercup Part 5
+    second: {fileID: 2100000, guid: 2598201fc78fc864ea7453b3a4628259, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lake_scene_background
+    second: {fileID: 2100000, guid: 5620b82c24834ae4f84635b56136bc9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leaves
+    second: {fileID: 2100000, guid: 28fa796a17d9c5d488ac62061d418ec6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: reminder_gray.001
+    second: {fileID: 2100000, guid: 7c6c298eff5e72a42b5bdfabb49a12b1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: abf872e4ca1814f4b9d2bb332b1cd51f
-timeCreated: 1517077320
+guid: ea6b004de18a15047897e24cf2c6c969
+timeCreated: 1517134152
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -15,12 +15,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trompeta
-    second: {fileID: 2100000, guid: a208ddbcd6408d44da33657c93beb7cd, type: 2}
+    second: {fileID: 2100000, guid: c17a07acef71fa44daf6db6f4689d779, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Trompeta.boquilla
-    second: {fileID: 2100000, guid: 3d5d3c0b4438fe04a9963d36538f1434, type: 2}
+    second: {fileID: 2100000, guid: 0f85501ce876d284bab4f612028f4f5e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
